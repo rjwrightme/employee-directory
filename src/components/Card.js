@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/Employee.css";
+import "../styles/Card.css";
 
-function Employee(props) {
+function Card(props) {
   return (
     <div className="card">
       <img src={props.image} />
@@ -13,4 +13,4 @@ function Employee(props) {
   );
 }
 
-export default Employee;
+export default Card;
