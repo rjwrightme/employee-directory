@@ -1,0 +1,19 @@
+.searchBox {
+    margin-top: 175px;
+    width: 90%;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.searchBox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2pt red;
+}
+
+::placeholder {
+    color: #ccc;
+}

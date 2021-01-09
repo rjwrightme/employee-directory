@@ -4,7 +4,7 @@ import "../styles/Card.css";
 function Card(props) {
   return (
     <div className="card">
-      <img src={props.image} />
+      <img src={props.image} alt={props.name + " profile picture"} />
       <h3>{props.name}</h3>
       <p>{props.phone}</p>
       <p>{props.email}</p>

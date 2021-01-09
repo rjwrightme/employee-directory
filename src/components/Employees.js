@@ -17,38 +17,48 @@ class Employees extends React.Component {
       "https://randomuser.me/api/?results=5&seed=abc&inc=picture,name,phone,email,dob,nat&nat=au"
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
-    //   .then(
-    //     (result) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         employeeList: result.employeeList,
-    //       });
-    //     },
-    //     (error) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         error,
-    //       });
-    //     }
-    //   );
+      .then(
+        (result) => {
+          const employees = result.results;
+          this.setState({
+            isLoaded: true,
+            employeeList: employees,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
   }
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, employeeList } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <p>{items}</p>
-        // <Card
-        //   image="https://picsum.photos/100"
-        //   name="John Smith"
-        //   phone="0404123456"
-        //   email="example@mail.com"
-        //   dob="02/11/1973"
-        // />
+        <div id="employeeList">
+          <div className="card">
+            <h3>Profile</h3>
+            <h3>Name</h3>
+            <h3>Phone</h3>
+            <h3>Email</h3>
+            <h3>DOB</h3>
+          </div>
+          {employeeList.map((employee) => (
+            <Card
+              image={employee.picture.large}
+              name={`${employee.name.first} ${employee.name.last}`}
+              phone={employee.phone}
+              email={employee.email}
+              dob={employee.dob.date.substr(0, 10)}
+            />
+          ))}
+        </div>
       );
     }
   }
