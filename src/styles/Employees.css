@@ -2,3 +2,16 @@
     max-width: 1000px;
     margin: 40px auto 0;
 }
+
+.sortIcon {
+    cursor: pointer;
+    color: #539aca;
+}
+
+.errorBlock {
+    background: #ffbaba;
+    border: 1px solid red;
+    width: 50%;
+    margin: 20px auto 0;
+    padding: 5px;
+}

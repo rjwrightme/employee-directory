@@ -11,7 +11,7 @@ class Employees extends React.Component {
   componentDidMount() {
     // Make AJAX request to the Random User API to fill our app with dummy data
     fetch(
-      "https://randomuser.me/api/?results=5&seed=abc&inc=picture,name,phone,email,dob,nat&nat=au"
+      "https://randomuser.me/api/?results=200&seed=abc&inc=picture,name,phone,email,dob,nat&nat=au"
     )
       .then((response) => response.json())
       .then(
@@ -45,7 +45,11 @@ class Employees extends React.Component {
     const { error, isLoaded } = this.state;
     const displayList = this.props.displayList;
     if (error) {
-      return <div>Error: {error.message}. Please try refreshing the page.</div>;
+      return (
+        <div className="errorBlock">
+          Error: {error.message}. Please try refreshing the page.
+        </div>
+      );
     } else if (!isLoaded) {
       return <div>Loading Employees...</div>;
     } else {
@@ -54,7 +58,10 @@ class Employees extends React.Component {
           <div className="card">
             <h3>Profile</h3>
             <h3>
-              Name <span onClick={this.handleSort}>˅</span>
+              Name{" "}
+              <span className="sortIcon" onClick={this.handleSort}>
+                ˅
+              </span>
             </h3>
             <h3>Phone</h3>
             <h3>Email</h3>
@@ -62,6 +69,7 @@ class Employees extends React.Component {
           </div>
           {displayList.map((employee) => (
             <Card
+              key={employee.dob.date}
               image={employee.picture.large}
               name={`${employee.name.first} ${employee.name.last}`}
               phone={employee.phone}
