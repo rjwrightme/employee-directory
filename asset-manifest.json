@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/emplyee-directory/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/emplyee-directory/static/js/main.e8579cfc.chunk.js",
-    "main.js.map": "/emplyee-directory/static/js/main.e8579cfc.chunk.js.map",
-    "runtime-main.js": "/emplyee-directory/static/js/runtime-main.42c578c1.js",
-    "runtime-main.js.map": "/emplyee-directory/static/js/runtime-main.42c578c1.js.map",
-    "static/js/2.1089e9a0.chunk.js": "/emplyee-directory/static/js/2.1089e9a0.chunk.js",
-    "static/js/2.1089e9a0.chunk.js.map": "/emplyee-directory/static/js/2.1089e9a0.chunk.js.map",
-    "static/js/3.add2c2d1.chunk.js": "/emplyee-directory/static/js/3.add2c2d1.chunk.js",
-    "static/js/3.add2c2d1.chunk.js.map": "/emplyee-directory/static/js/3.add2c2d1.chunk.js.map",
+    "main.css": "/emplyee-directory/static/css/main.e7ccd391.chunk.css",
+    "main.js": "/emplyee-directory/static/js/main.d9157814.chunk.js",
+    "main.js.map": "/emplyee-directory/static/js/main.d9157814.chunk.js.map",
+    "runtime-main.js": "/emplyee-directory/static/js/runtime-main.c41207e6.js",
+    "runtime-main.js.map": "/emplyee-directory/static/js/runtime-main.c41207e6.js.map",
+    "static/js/2.620e30b6.chunk.js": "/emplyee-directory/static/js/2.620e30b6.chunk.js",
+    "static/js/2.620e30b6.chunk.js.map": "/emplyee-directory/static/js/2.620e30b6.chunk.js.map",
+    "static/js/3.39a87690.chunk.js": "/emplyee-directory/static/js/3.39a87690.chunk.js",
+    "static/js/3.39a87690.chunk.js.map": "/emplyee-directory/static/js/3.39a87690.chunk.js.map",
     "index.html": "/emplyee-directory/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/emplyee-directory/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.1089e9a0.chunk.js.LICENSE.txt": "/emplyee-directory/static/js/2.1089e9a0.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/emplyee-directory/static/media/logo.6ce24c58.svg"
+    "static/css/main.e7ccd391.chunk.css.map": "/emplyee-directory/static/css/main.e7ccd391.chunk.css.map",
+    "static/js/2.620e30b6.chunk.js.LICENSE.txt": "/emplyee-directory/static/js/2.620e30b6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.42c578c1.js",
-    "static/js/2.1089e9a0.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.e8579cfc.chunk.js"
+    "static/js/runtime-main.c41207e6.js",
+    "static/js/2.620e30b6.chunk.js",
+    "static/css/main.e7ccd391.chunk.css",
+    "static/js/main.d9157814.chunk.js"
   ]
 }
