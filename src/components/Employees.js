@@ -3,16 +3,13 @@ import Card from "./Card";
 import "../styles/Employees.css";
 
 class Employees extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      employeeList: [],
-    };
-  }
+  state = {
+    error: null,
+    isLoaded: false,
+  };
 
   componentDidMount() {
+    // Make AJAX request to the Random User API to fill our app with dummy data
     fetch(
       "https://randomuser.me/api/?results=5&seed=abc&inc=picture,name,phone,email,dob,nat&nat=au"
     )
@@ -22,8 +19,8 @@ class Employees extends React.Component {
           const employees = result.results;
           this.setState({
             isLoaded: true,
-            employeeList: employees,
           });
+          this.props.updateEmployeeList(employees);
         },
         (error) => {
           this.setState({
@@ -34,11 +31,12 @@ class Employees extends React.Component {
       );
   }
   render() {
-    const { error, isLoaded, employeeList } = this.state;
+    const { error, isLoaded } = this.state;
+    const displayList = this.props.displayList;
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}. Please try refreshing the page.</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div>Loading Employees...</div>;
     } else {
       return (
         <div id="employeeList">
@@ -49,7 +47,7 @@ class Employees extends React.Component {
             <h3>Email</h3>
             <h3>DOB</h3>
           </div>
-          {employeeList.map((employee) => (
+          {displayList.map((employee) => (
             <Card
               image={employee.picture.large}
               name={`${employee.name.first} ${employee.name.last}`}
