@@ -30,6 +30,17 @@ class Employees extends React.Component {
         }
       );
   }
+
+  handleSort = (e) => {
+    if (e.target.innerText === "˅") {
+      e.target.innerText = "˄";
+      this.props.sortAlphabetically(this.props.displayList);
+    } else {
+      e.target.innerText = "˅";
+      this.props.sortDescending(this.props.displayList);
+    }
+  };
+
   render() {
     const { error, isLoaded } = this.state;
     const displayList = this.props.displayList;
@@ -42,7 +53,9 @@ class Employees extends React.Component {
         <div id="employeeList">
           <div className="card">
             <h3>Profile</h3>
-            <h3>Name</h3>
+            <h3>
+              Name <span onClick={this.handleSort}>˅</span>
+            </h3>
             <h3>Phone</h3>
             <h3>Email</h3>
             <h3>DOB</h3>

@@ -23,6 +23,16 @@ class App extends React.Component {
     this.updateDisplayList(list);
   };
 
+  sortAlphabetically = (list) => {
+    list.sort((a, b) => a.name.first.localeCompare(b.name.first));
+    this.updateDisplayList(list);
+  };
+
+  sortDescending = (list) => {
+    list.sort((a, b) => b.name.first.localeCompare(a.name.first));
+    this.updateDisplayList(list);
+  };
+
   render() {
     return (
       <div className="App">
@@ -35,6 +45,8 @@ class App extends React.Component {
           employeeList={this.state.employeeList}
           displayList={this.state.displayList}
           updateEmployeeList={this.updateEmployeeList}
+          sortAlphabetically={this.sortAlphabetically}
+          sortDescending={this.sortDescending}
         />
       </div>
     );
